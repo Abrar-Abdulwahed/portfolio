@@ -8,26 +8,28 @@
 		<link rel="stylesheet" href="css/main.css" />
 	</head>
 	<body>
-		<header class="py-2">
+		<header class="py-1">
 			<div class="container">
 				<nav class="d-flex justify-content-space-between align-items-center flex-wrap">
 					<div class="logo h1 align-self-center"><span>Lo</span>go</div>
-					<button class="d-sm-none">
+					<button class="d-sm-none ms-auto">
 						<i class="fas fa-bars"></i>
 					</button>
-					<ul class="menu d-none d-sm-flex">
-						<li><a href="#home">Home</a></li>
-						<li><a href="#about">About</a></li>
-						<li><a href="#works">service</a></li>
-						<li><a href="#exp-skills">Experience and Skills</a></li>
-						<li><a href="#contact">Contact</a></li>
-					</ul>
+					<div class="col-md-7">
+						<ul class="menu justify-content-space-between d-none d-sm-flex">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li><a href="#works">service</a></li>
+							<li><a href="#exp-skills">Skills</a></li>
+							<li><a href="#contact">Contact</a></li>
+						</ul>
+					</div>		
 				</nav>
 			</div>
 		</header>
 		<section id="about" class="showcase">
 			<div class="container">
-				<div class="row justify-content-space-between align-items-center flex-sm-nowrap">
+				<div class="row align-items-center flex-sm-nowrap">
 					<div class="profile p-1">
 						<img src="img/avatar.jpg" alt="" />
 					</div>
@@ -39,7 +41,7 @@
 							I am learning how to code.<br>
 							After my currently 3 mounths program, I will become a Junior Full stack web developer.
 						</p>
-						<button class="btn secondary-btn py-1 px-2 my-1">
+						<button class="download-btn py-1 px-2 my-1">
 							Download CV
 						</button>
 					</div>
@@ -86,10 +88,10 @@
 			</div>   
 		</section>
 		<section id="exp-skills" class="py-100">
-			<span class="h1 my-2">Experience and Skills</span>
+			<!-- <span class="h1 my-2">Experience and Skills</span> -->
 			<div class="container">
 				<div class="row justify-content-space-between">
-					<div class="col-md-4 col-sm-12 ">
+					<div class="col-md-4 col-sm-12">
 						<div class="experience p-2">
 							<span class="h3">Skills Reflects Our Knowledge</span>
 							<p>
@@ -105,7 +107,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-8 col-sm-12">
+					<div class="col-md-8 col-sm-12 col-xs-12">
 						<div class="skills py-2">
 							<div class="skill my-2" id="html">
 								<span class="h5">HTML</span>
@@ -255,6 +257,7 @@
 				</div>
 			</div>
 		</footer>
+	
 	</body>
 	<script
 		src="https://kit.fontawesome.com/0258162a56.js"
