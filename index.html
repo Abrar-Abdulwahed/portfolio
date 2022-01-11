@@ -10,9 +10,7 @@
 	<body>
 		<header class="py-2">
 			<div class="container">
-				<nav
-					class="d-flex justify-content-space-between align-items-center flex-wrap"
-				>
+				<nav class="d-flex justify-content-space-between align-items-center flex-wrap">
 					<div class="logo h1 align-self-center"><span>Lo</span>go</div>
 					<button class="d-sm-none">
 						<i class="fas fa-bars"></i>
@@ -20,8 +18,8 @@
 					<ul class="menu d-none d-sm-flex">
 						<li><a href="#home">Home</a></li>
 						<li><a href="#about">About</a></li>
+						<li><a href="#works">service</a></li>
 						<li><a href="#exp-skills">Experience and Skills</a></li>
-                        <li><a href="#service">service</a></li>
 						<li><a href="#contact">Contact</a></li>
 					</ul>
 				</nav>
@@ -29,121 +27,234 @@
 		</header>
 		<section id="about" class="showcase">
 			<div class="container">
-				<div
-					class="row justify-content-space-between align-items-center flex-sm-nowrap"
-				>
-					<div class="profile">
+				<div class="row justify-content-space-between align-items-center flex-sm-nowrap">
+					<div class="profile p-1">
 						<img src="img/avatar.jpg" alt="" />
 					</div>
 					<div class="aboutme">
 						<p>I'm Abrar Alkhorasani</p>
 						<p><span>full stack</span> developer</p>
 						<p>
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-							Deserunt, obcaecati?
+							I am actualy a student at CodingRowadAcademy<br/>
+							I am learning how to code.<br>
+							After my currently 3 mounths program, I will become a Junior Full stack web developer.
 						</p>
-						<button class="btn secondary-btn py-1 px-2 my-1">Download CV</button>
+						<button class="btn secondary-btn py-1 px-2 my-1">
+							Download CV
+						</button>
 					</div>
 				</div>
 			</div>
 		</section>
-		<section id="exp-skills" class="py-100">
-            <span class="h1 my-2">Experienc and Skills</span>
+		<section id="works" class="our-work py-100">
 			<div class="container">
-                <div class="row justify-content-space-between">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="experience">
-                            <span class="h3">Skills Reflects Our Knowledge</span>
-                            <p>
-                                Graduated in 2019 from Taiz University, College of Engineering
-                                Bachelor of Information Technology
-                            </p>
-                            <div class="years-experience my-1">
-                                <span class="num h1">0</span>
-                                <div class="exp h3">
-                                    Years Of <br/>
-                                    Experience
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5 col-sm-12">
-                        <div class="skills">
-                            <div class="skill my-2" id="html">
-                                <span class="mb-1 h3">HTML</span>
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill my-2" id="css">
-                                <span class="mb-1 h3">CSS</span>
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill my-2" id="sass">
-                                <span class="mb-1 h3">SASS</span>
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-                            </div>
-                            <div class="skill my-2" id="js">
-                                <span class="title mb-1 h3">Javascript</span>
-                                <div class="progress-bar">
-                                    <div class="progress"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+				<div class="row justify-content-space-between">
+					<div class="section-head">
+						<i class="fas fa-suitcase"></i>
+						<span class="h1">Our latest works</span>  
+					</div>            
+					<div class="bullets">
+						<span class="bullet"></span> 
+						<span class="bullet"></span> 
+						<span class="bullet"></span> 
+					</div> 
+				</div>
+				<div class="works mt-3 justify-content-center">     
+					<div class="work-item">
+						<img src="img/work.jpg" alt="">
+						<div class="item-body">    
+							<h3>Project Name</h3>
+							<i class="fa fa-play"></i>           
+						</div> 
+					</div> 
+				
+					<div class="work-item">
+						<img src="img/work.jpg" alt="">
+						<div class="item-body">    
+							<h3>Project Name</h3> 
+							<i class="fa fa-play"></i>             
+						</div> 
+					</div>  
+					<div class="work-item">
+						<img src="img/work.jpg" alt="">
+						<div class="item-body">    
+							<h3>Project Name</h3>  
+							<i class="fa fa-play"></i>             
+						</div> 
+					</div>          
+				</div>         
+			</div>   
 		</section>
-        <section id="contact" class="py-100">
-            <div class="container">
-                <span class="h1">Contact Us</span>
-                <form action="" class="p-2">
-                    <div class="form-field p-1">
-                        <label for="name">Full Name</label>
-                        <input type="text" name="Name" id="name" placeholder="Enter your full name" required minlength="3" maxlength="25" />
-                    </div>
-                    <div class="form-field p-1">
-                        <label for="email">Email Address</label>
-                        <input type="email" name="Email" id="email" placeholder="email@example.tld" required />
-                    </div>
-                    <div class="form-field p-1">
-                    <label for="message">Message</label>
-                    <textarea name="Message" id="message" rows="5" placeholder="Type your message here...."></textarea>
-                    </div>
-                    <div class="form-field p-1">
-                        <i class="far fa-paper-plane"></i><input type="submit" class="btn main-btn  py-1 px-2" value="Send">
-                    </div>
-              </form>
-            </div>  
-        </section>
-        <footer>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">col1</div>
-                    <div class="col-md-3">col 2</div>
-                    <div class="col-md-3">col 3</div>
-                    <div class="col-md-3">col 4</div>
-                </div>
-                <div class="row py-2 justify-content-space-between">
-                    <div class="col-sm-12 col-md-6">
-                        copyright is saved &copy; 2022 by Abrar
-                    </div>
-                    <div class="col-sm-12 col-md-6 rounded-social-buttons">
-                     
-                            <a class="social-button facebook" href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                            <a class="social-button twitter" href="https://www.twitter.com/" target="_blank"><i class="fab fa-twitter"></i></a>
-                            <a class="social-button linkedin" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                            <a class="social-button youtube" href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube"></i></a>
-                            <a class="social-button instagram" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
-                      
-                    </div>
-                </div>
-            </div>
-        </footer>
+		<section id="exp-skills" class="py-100">
+			<span class="h1 my-2">Experience and Skills</span>
+			<div class="container">
+				<div class="row justify-content-space-between">
+					<div class="col-md-4 col-sm-12 ">
+						<div class="experience p-2">
+							<span class="h3">Skills Reflects Our Knowledge</span>
+							<p>
+								Graduated in 2019 from Taiz University, College of Engineering
+								Bachelor of Information Technology
+							</p>
+							<div class="years-experience my-1">
+								<span class="num h1">0</span>
+								<div class="exp h3">
+									Years Of <br />
+									Experience
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-8 col-sm-12">
+						<div class="skills py-2">
+							<div class="skill my-2" id="html">
+								<span class="h5">HTML</span>
+								<div class="progress-bar">
+									<div class="progress"></div>
+								</div>
+							</div>
+							<div class="skill my-2" id="css">
+								<span class="h5">CSS</span>
+								<div class="progress-bar">
+									<div class="progress"></div>
+								</div>
+							</div>
+							<div class="skill my-2" id="sass">
+								<span class="h5">SASS</span>
+								<div class="progress-bar">
+									<div class="progress"></div>
+								</div>
+							</div>
+							<div class="skill my-2" id="js">
+								<span class="h5">Javascript</span>
+								<div class="progress-bar">
+									<div class="progress"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section id="contact" class="py-100">
+			<div class="container">
+				<span class="h1">Contact Us</span>
+				<form action="" class="p-2">
+					<div class="form-field p-1">
+						<label for="name">Full Name</label>
+						<input
+							type="text"
+							name="Name"
+							id="name"
+							placeholder="Enter your full name"
+							required
+							minlength="3"
+							maxlength="25"
+						/>
+					</div>
+					<div class="form-field p-1">
+						<label for="email">Email Address</label>
+						<input
+							type="email"
+							name="Email"
+							id="email"
+							placeholder="email@example.tld"
+							required
+						/>
+					</div>
+					<div class="form-field p-1">
+						<label for="message">Message</label>
+						<textarea
+							name="Message"
+							id="message"
+							rows="5"
+							placeholder="Type your message here...."
+						></textarea>
+					</div>
+					<div class="form-field p-1">
+						<i class="far fa-paper-plane"></i
+						><input type="submit" class="btn main-btn py-1 px-2" value="Send" />
+					</div>
+				</form>
+			</div>
+		</section>
+		<footer class="site-footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12 col-md-6">
+						<h6>About</h6>
+						<p class="text-justify">
+							Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nemo eaque commodi veritatis aut earum amet consequatur enim quisquam, accusamus facere et! Praesentium enim tenetur, commodi eligendi autem blanditiis animi.
+						</p>
+					</div>
+
+					<div class="col-xs-6 col-md-3">
+						<h6>Categories</h6>
+						<ul class="footer-links">
+							<li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+							<li>
+								<a href="http://scanfcode.com/category/front-end-development/">Col1</a>
+							</li>
+							<li>
+								<a href="http://scanfcode.com/category/back-end-development/">Col2</a>
+							</li>
+							<li>
+								<a
+									href="http://scanfcode.com/category/java-programming-language/">Col3</a>
+							</li>
+							<li>
+								<a href="http://scanfcode.com/category/android/">Col4</a>
+							</li>
+							<li>
+								<a href="http://scanfcode.com/category/templates/">Col5</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="col-xs-6 col-md-3">
+						<h6>Quick Links</h6>
+						<ul class="footer-links">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">About</a></li>
+							<li>
+								<a href="#works">Our Works</a>
+							</li>
+							<li>
+								<a href="#contact">Contact</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<hr />
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8 col-sm-6 col-xs-12">
+						<p class="copyright-text">
+							Copyright &copy; 2022 All Rights Reserved by
+							<a href="#">Abrar</a>.
+						</p>
+					</div>
+
+					<div class="col-md-4 col-sm-6 col-xs-12">
+						<ul class="social-icons">
+							<li>
+								<a class="facebook" href="#"><i class="fa fa-facebook"></i></a>
+							</li>
+							<li>
+								<a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+							</li>
+							<li>
+								<a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+							</li>
+							<li>
+								<a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
 	</body>
 	<script
 		src="https://kit.fontawesome.com/0258162a56.js"

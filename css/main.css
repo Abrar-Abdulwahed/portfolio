@@ -51,6 +51,12 @@
    font-weight: 600 !important;
  }
 
+ .h5,
+ h5 {
+   font-size: clamp(15px, 1.15rem, 2.1666666667rem);
+   font-weight: 600;
+ }
+
  .py-100 {
    padding: 100px 0;
  }
@@ -63,6 +69,14 @@
    padding: 24px;
  }
 
+ .p-3 {
+   padding: 36px;
+ }
+
+ .px-6 {
+   padding-inline: 72px;
+ }
+
  .px-2 {
    padding-inline: 24px;
  }
@@ -73,6 +87,10 @@
 
  .py-2 {
    padding-block: 24px;
+ }
+
+ .mt-3 {
+   margin-top: 36px;
  }
 
  .my-1 {
@@ -277,6 +295,7 @@
    flex-flow: row wrap;
  }
 
+ /**= = = = = = = Header = = = = = = =**/
  header {
    box-shadow: 0px -7px 7px 7px #000;
  }
@@ -298,18 +317,32 @@
 
  /**= = = = = = = About = = = = = = =**/
  .showcase {
-   position: relative;
-   height: 80vh;
-   background-image: linear-gradient(90deg, var(--main-color) 70%, rgba(192, 192, 192, 0.8) 50%);
+
+   background-image: linear-gradient(90deg, var(--main-color) 77%, rgba(192, 192, 192, 0.8) 50%);
+ }
+
+ .showcase .row {
+   height: 50vh;
  }
 
  .showcase .profile {
    order: 1;
-   position: relative;
-   top: 20px;
+   border: 6px solid #fff;
+   border-radius: 50%;
  }
 
+ .showcase .profile img {
+   width: 200px;
+   height: 200px;
+   border-radius: 50%;
 
+   object-fit: cover;
+   object-position: center right;
+ }
+
+ .showcase .aboutme {
+   align-self: center;
+ }
 
  .showcase .aboutme span {
    text-transform: uppercase;
@@ -317,10 +350,83 @@
    font-weight: 900;
  }
 
+ /**= = = = = = = Our-work = = = = = = =**/
+ .our-work i {
+   font-size: clamp(19px, 1.35rem + 1.2vw, 2.8rem);
+   color: #fff;
+   padding: 10px;
+   background-color: #000;
+   border-radius: 0.25rem;
+   text-align: center;
+ }
+
+ .our-work span {
+   vertical-align: baseline;
+ }
+
+ .our-work .bullets {
+   align-self: center;
+ }
+
+ .our-work .bullet {
+   cursor: pointer;
+   height: 5px;
+   width: 40px;
+   margin: 0 2px;
+   background-color: #bbb;
+   border-radius: var(--border-radius);
+   display: inline-block;
+   transition: background-color 0.6s ease;
+ }
+
+ .our-work .works {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+   justify-content: space-between;
+   grid-gap: 40px;
+ }
+
+ .our-work .work-item {
+   border-radius: var(--border-radius);
+   display: flex;
+   flex-direction: column;
+   word-wrap: break-word;
+   background: linear-gradient(#e4b5519d, #e4b5516e);
+   padding: 11px;
+ }
+
+ .our-work img {
+   border-radius: var(--border-radius);
+   box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.438);
+ }
+
+ .our-work .item-body {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+
+ .our-work .item-body i {
+   font-size: 12px;
+   color: #fff;
+   padding: 10px;
+   background-color: var(--main-color);
+   border-radius: 0.25rem;
+   text-align: center;
+ }
+
  /**= = = = = = = Skills and experience = = = = = = =**/
- #exp-skills span {
+ #exp-skills>span {
    display: block;
    text-align: center;
+ }
+
+ .experience {
+   background-color: #c0c0c0;
+   outline: 7px solid #fff;
+   position: relative;
+   top: -30px;
+   left: 100px;
  }
 
  .years-experience {
@@ -343,13 +449,16 @@
  .skills {
    display: flex;
    flex-direction: column;
+   background-color: var(--main-color);
+   padding-left: 200px;
+   padding-right: 200px;
  }
 
  .progress-bar {
    background: #c7c7c7;
    border-radius: 3px;
    width: 100%;
-   height: 15px;
+   height: 8px;
    margin-top: 5px;
  }
 
@@ -373,7 +482,7 @@
    padding: 2px 3px;
    border-radius: 4px;
    right: -18px;
-   top: -30px;
+   top: -20px;
    background: var(--main-text-color);
  }
 
@@ -455,73 +564,163 @@
  }
 
  /**= = = = = = = Footer = = = = = = =**/
- .rounded-social-buttons .social-button {
-   display: inline-block;
-   position: relative;
-   cursor: pointer;
-   width: 2rem;
-   height: 2rem;
-   border: 0.125rem solid transparent;
-   padding: 0;
-   text-decoration: none;
-   text-align: center;
-   color: #fefefe;
-   line-height: 2em;
-   border-radius: 1.6875rem;
-   transition: all 0.5s ease;
- }
-
-
- .rounded-social-buttons .fa-twitter, .fa-facebook-f, .fa-linkedin, .fa-youtube, .fa-instagram {
+ .site-footer {
+   background-color: #26272b;
+   padding: 45px 0 20px;
    font-size: 15px;
+   line-height: 24px;
+   color: #737373;
  }
 
- .rounded-social-buttons .social-button.facebook {
-   background: #3b5998;
+ .site-footer hr {
+   border-top-color: #bbb;
+   opacity: 0.5
  }
 
- .rounded-social-buttons .social-button.facebook:hover, .rounded-social-buttons .social-button.facebook:focus {
-   color: #3b5998;
-   background: #fefefe;
-   border-color: #3b5998;
+ .site-footer hr.small {
+   margin: 20px 0
  }
 
- .rounded-social-buttons .social-button.twitter {
-   background: #55acee;
+ .site-footer h6 {
+   color: #fff;
+   font-size: 16px;
+   text-transform: uppercase;
+   margin-top: 5px;
+   letter-spacing: 2px
  }
 
- .rounded-social-buttons .social-button.twitter:hover, .rounded-social-buttons .social-button.twitter:focus {
-   color: #55acee;
-   background: #fefefe;
-   border-color: #55acee;
+ .site-footer a {
+   color: #737373;
  }
 
- .rounded-social-buttons .social-button.linkedin {
-   background: #007bb5;
+ .site-footer a:hover {
+   color: #3366cc;
+   text-decoration: none;
  }
 
- .rounded-social-buttons .social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
-   color: #007bb5;
-   background: #fefefe;
-   border-color: #007bb5;
+ .footer-links {
+   padding-left: 0;
+   list-style: none
  }
 
- .rounded-social-buttons .social-button.youtube {
-   background: #bb0000;
+ .footer-links li {
+   display: block
  }
 
- .rounded-social-buttons .social-button.youtube:hover, .rounded-social-buttons .social-button.youtube:focus {
-   color: #bb0000;
-   background: #fefefe;
-   border-color: #bb0000;
+ .footer-links a {
+   color: #737373
  }
 
- .rounded-social-buttons .social-button.instagram {
-   background: #125688;
+ .footer-links a:active, .footer-links a:focus, .footer-links a:hover {
+   color: #3366cc;
+   text-decoration: none;
  }
 
- .rounded-social-buttons .social-button.instagram:hover, .rounded-social-buttons .social-button.instagram:focus {
-   color: #125688;
-   background: #fefefe;
-   border-color: #125688;
+ .footer-links.inline li {
+   display: inline-block
+ }
+
+ .site-footer .social-icons {
+   text-align: right
+ }
+
+ .site-footer .social-icons a {
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
+   margin-left: 6px;
+   margin-right: 0;
+   border-radius: 100%;
+   background-color: #33353d
+ }
+
+ .copyright-text {
+   margin: 0
+ }
+
+ @media (max-width:991px) {
+   .site-footer [class^=col-] {
+     margin-bottom: 30px
+   }
+ }
+
+ @media (max-width:767px) {
+   .site-footer {
+     padding-bottom: 0
+   }
+
+   .site-footer .copyright-text, .site-footer .social-icons {
+     text-align: center
+   }
+ }
+
+ .social-icons {
+   padding-left: 0;
+   margin-bottom: 0;
+   list-style: none
+ }
+
+ .social-icons li {
+   display: inline-block;
+   margin-bottom: 4px
+ }
+
+ .social-icons li.title {
+   margin-right: 15px;
+   text-transform: uppercase;
+   color: #96a2b2;
+   font-weight: 700;
+   font-size: 13px
+ }
+
+ .social-icons a {
+   background-color: #eceeef;
+   color: #818a91;
+   font-size: 16px;
+   display: inline-block;
+   line-height: 44px;
+   width: 44px;
+   height: 44px;
+   text-align: center;
+   margin-right: 8px;
+   border-radius: 100%;
+   -webkit-transition: all .2s linear;
+   -o-transition: all .2s linear;
+   transition: all .2s linear
+ }
+
+ .social-icons a:active, .social-icons a:focus, .social-icons a:hover {
+   color: #fff;
+   background-color: #29aafe
+ }
+
+ .social-icons.size-sm a {
+   line-height: 34px;
+   height: 34px;
+   width: 34px;
+   font-size: 14px
+ }
+
+ .social-icons a.facebook:hover {
+   background-color: #3b5998
+ }
+
+ .social-icons a.twitter:hover {
+   background-color: #00aced
+ }
+
+ .social-icons a.linkedin:hover {
+   background-color: #007bb6
+ }
+
+ .social-icons a.dribbble:hover {
+   background-color: #ea4c89
+ }
+
+ @media (max-width:767px) {
+   .social-icons li.title {
+     display: block;
+     margin-right: 0;
+     font-weight: 600
+   }
  }
