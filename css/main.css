@@ -1,8 +1,11 @@
 :root {
+  --ligth-theme-color: #fff;
+  --dark-theme-color: #000;
   --main-color: #e4b551;
   --main-op-color: #e4b551a9;
   --secondary-color: #e451a7;
   --main-text-color: #2c2c2c;
+  --secondary-text-color: #eee;
 }
 
 *,
@@ -17,14 +20,13 @@
 
 html,
 body {
-  color: var(--main-text-color);
   height: 100vh;
   scroll-behavior: smooth;
   line-height: 1.5;
-}
-
-body {
   font-family: Arial, sans-serif;
+}
+body {
+    color: var(--main-text-color);
 }
 
 ul {
@@ -32,7 +34,7 @@ ul {
 }
 
 a {
-  color: #000;
+    color: var(--main-text-color);
   text-decoration: none;
 }
 
@@ -217,13 +219,59 @@ header .menu>li:last-child {
   -ms-padding-start: clamp(10px, 0.7rem + 0.3vw, 2rem);
   -o-padding-start: clamp(10px, 0.7rem + 0.3vw, 2rem);
 }
+header .mode{
+    position: fixed;
+    left: 10px;
+    top: 40vh;
+}
+header .checkbox {
+	opacity: 0;
+	position: absolute;
+}
+
+.label {
+	background-color: #111;
+	border-radius: 50px;
+	cursor: pointer;
+	padding: 5px;
+	position: relative;
+	height: 18px;
+	width: 40px;
+	transform: scale(1.5);
+}
+
+.label .ball {
+	background-color: #fff;
+	border-radius: 50%;
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	height: 14px;
+	width: 14px;
+	transform: translateX(1px);
+	transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+	transform: translateX(20px);
+}
+
+
+.fa-moon, .fa-sun {
+    font-size: 12px;
+	color: #f1c40f;
+}
+
+.fa-sun {
+	color: #f39c12;
+}
 
 /**= = = = = = = Home = = = = = = =**/
 .showcase {
   min-height: 60vh;
   padding: 24px 0;
   background-image: linear-gradient(90deg,
-      #e4b551fa,
+      #e4b551fc,
       #e4b551), url('../img/nicetexture.webp');
   background-attachment: fixed;
 }
@@ -302,26 +350,13 @@ header .menu>li:last-child {
 button:focus {
   animation-play-state: paused;
   border-color: hsl(0, 0%, 100%);
-  color: var(--button-border-color);
-}
-
-.download-btn:hover::after,
-button:focus::after {
-  color: var(--button-border-color);
 }
 
 .download-btn:active {
   animation-play-state: paused;
   transform: translate(0px, -4px);
-  background: var(--button-border-color);
-  color: var(--background);
-  border-color: var(--button-border-color);
 }
 
-.download-btn:active::after {
-  color: var(--button-border-color);
-  background: var(--background);
-}
 
 @keyframes borderColorAnimation {
   0% {
@@ -907,8 +942,8 @@ footer .bottom a:hover {
 
   .showcase {
     background-image: linear-gradient(90deg,
-        #e4b551fa 60%,
-        #f2f2f2f3 50%), url('../img/nicetexture.webp');
+        #e4b551fc 60%,
+        #f2f2f2fc 50%), url('../img/nicetexture.webp');
   }
 
   .experience {

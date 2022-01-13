@@ -6,18 +6,27 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Abrar - Portfolio</title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/light.css">
     </head>
     <body>
         <header class="py-1">
             <div class="container">
                 <nav class="d-flex justify-content-space-between align-items-center flex-wrap">
                     <div class="logo h1 align-self-center">
-                        <span>Lo</span>
-                        go
+                        <span>Lo</span>go
                     </div>
                     <button class="d-sm-none ms-auto">
                         <i class="fas fa-bars"></i>
                     </button>
+                    <!-- Dark/Light Mode -->
+                    <div class="mode">
+                        <input type="checkbox" class="checkbox" id="chk" />
+                        <label class="label d-flex justify-content-space-between align-items-center" for="chk">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
                     <div class="col-md-7">
                         <ul class="menu justify-content-space-between d-none d-sm-flex">
                             <li>
@@ -309,6 +318,7 @@
                 All rights reserved by © Abrar 2022 
             </div>
         </footer>
+        <script src="js/app.js"></script>
     </body>
         <script src="https://kit.fontawesome.com/0258162a56.js" crossorigin="anonymous"></script>
     </html>
