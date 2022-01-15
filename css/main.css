@@ -152,8 +152,9 @@ h5 {
   color: #fff;
   background-color: transparent;
   border: 1px solid transparent;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  max-width: 100%;
+  word-wrap: break-word;
+  transition: all .5s ease-in-out;
 }
 
 .secondary-btn {
@@ -168,6 +169,10 @@ h5 {
 
 .main-outline-btn {
   border-color: var(--main-color);
+}
+
+.main-outline-btn:hover {
+  background-color: var(--main-color);
 }
 
 .justify-content-center {
@@ -203,11 +208,6 @@ h5 {
 .row {
   display: flex;
   flex-flow: row wrap;
-}
-
-.error {
-  color: red;
-  margin-bottom: 20px;
 }
 
 /**= = = = = = = Header = = = = = = =**/
@@ -634,34 +634,71 @@ button:focus {
 
 #contact form {
   background-color: rgba(24, 24, 24, 0.658);
-}
-
-.corner-border {
   position: relative;
+  overflow: hidden;
 }
 
-.corner-border::after {
+#contact form:before {
   content: '';
   position: absolute;
-  background-color: var(--main-color);
-  width: 3px;
-  height: 60%;
   top: 0;
-  left: -5px;
-
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  left: -50%;
+  transform: skewX(-5deg);
 }
 
-.corner-border::before {
+#contact span {
+  position: relative;
+  z-index: 1;
+  display: block;
+}
+
+#contact span:before, #contact span:after {
   content: '';
   position: absolute;
+  width: 100px;
+  height: 2px;
+  display: block;
   background-color: var(--main-color);
-  width: 20%;
-  height: 3px;
-  top: 0;
-  left: -12px;
-
 }
 
+#contact span:nth-of-type(1)::before {
+  left: 0;
+  top: 0;
+}
+
+#contact span:nth-of-type(1)::after {
+  right: -47px;
+  top: 50px;
+  transform: rotate(90deg);
+}
+
+#contact span:nth-of-type(2)::before {
+  bottom: 0;
+  right: 0;
+}
+
+#contact span:nth-of-type(2)::after {
+  bottom: 50px;
+  left: -50px;
+  transform: rotate(90deg);
+}
+
+#contact .form-control.success input, .form-control.success textarea {
+  border: 2px solid #09c372 !important;
+}
+
+#contact .form-control.error input, .form-control.error textarea {
+  border: 2px solid #ff3860 !important;
+}
+
+#contact .form-control .error {
+  color: #ff3860;
+  margin-bottom: 20px;
+}
 
 #contact input,
 #contact textarea {
@@ -669,9 +706,20 @@ button:focus {
   width: 100%;
   background-color: transparent;
   font-size: 18px;
-  padding: 15px 0;
+  padding: 10px 15px;
   color: #fff;
   resize: none;
+  position: relative;
+  z-index: 1;
+}
+
+#contact input:focus,
+#contact textarea:focus {
+  border: 2px solid #000;
+}
+
+#contact button {
+  position: relative;
 }
 
 /**= = = = = = = Footer = = = = = = =**/
@@ -974,6 +1022,10 @@ footer .bottom a:hover {
   .skills {
     padding-left: clamp(80px, 7rem + 3vw, 7rem);
     padding-right: clamp(80px, 2.5rem + 3vw, 7rem);
+  }
+
+  .px-md-6 {
+    padding-inline: 72px;
   }
 }
 

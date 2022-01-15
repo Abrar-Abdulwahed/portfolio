@@ -20,7 +20,7 @@
                         <i class="fas fa-bars"></i>
                     </button>
                     <!-- Dark/Light Mode -->
-                    <div class="mode">
+                    <div class="mode" id="changeMode">
                         <input type="checkbox" class="checkbox" id="chk" />
                         <label class="label d-flex justify-content-space-between align-items-center" for="chk">
                             <i class="fas fa-moon"></i>
@@ -83,7 +83,7 @@
                 </div>
                 <div class="row mt-3 justify-content-center md-justify-content-space-between">
                     <div class="col-xs-7 col-sm-7 col-md-5 col-lg-3 mt-2">
-                        <div class="work-item" onmouseover="changeToBlueColor()">
+                        <div class="work-item" onmouseover="changeToGrayScale()">
                             <img src="img/template1.png" alt="" height="450px">
                             <div class="info">
                                 <div class="links">
@@ -98,7 +98,7 @@
                         </div>
                     </div>
                     <div class="col-xs-7 col-sm-7 col-md-5 col-lg-3 mt-2">
-                        <div class="work-item" onmouseover="changeToBlueColor()">
+                        <div class="work-item" onmouseover="changeToGrayScale()">
                             <img src="img/responsive template.png" alt="" height="450px">
                             <div class="info">
                                 <div class="links">
@@ -113,7 +113,7 @@
                         </div>
                     </div>
                     <div class="col-xs-7 col-sm-7 col-md-5 col-lg-3 mt-2">
-                        <div class="work-item" onmouseover="changeToBlueColor()">
+                        <div class="work-item" onmouseover="changeToGrayScale()">
                             <img src="img/bootstrap template.png" alt="" height="450px">
                             <div class="info">
                                 <div class="links">
@@ -242,21 +242,25 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xs-12 col-md-7">
-                        <form action="/" id="form" class="corner-border bottom-corner py-2 px-6">
-                            <div>
-                                <input type="text" name="name" id="username" placeholder="Your Name">
-                                <div id="nameError" class="error"></div>
-                            </div>
-                            <div>
-                                <input type="email" name="email" id="email" placeholder="Your Email">
-                                <div id="emailError" class="error"></div>
-                            </div>
-                            <div>
-                                <textarea name="msg" id="message" cols="30" rows="10" placeholder="Your Message"></textarea><br>
-                                <div id="msgError" class="error"></div>
-                            </div>
-                            <button class="btn main-outline-btn px-2 py-1">Submit</button>
-                        </form>
+                        <span></span>
+                        <form action="/" id="form">
+                            <div class="p-2 px-md-6">
+                                <div class="form-control">
+                                    <input type="text" name="name" id="username" placeholder="Your Name">
+                                    <div class="error"></div>
+                                </div>
+                                <div class="form-control">
+                                    <input type="text" name="email" id="email" placeholder="Your Email">
+                                    <div class="error"></div>
+                                </div>
+                                <div class="form-control">
+                                    <textarea name="msg" id="message" cols="30" rows="10" placeholder="Your Message"></textarea><br>
+                                    <div class="error"></div>
+                                </div>
+                                <button class="btn main-outline-btn px-2 py-1">Submit</button>
+                            </div>  
+                        </form>  
+                        <span></span>
                     </div>
                 </div>
             </div>

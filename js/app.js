@@ -46,65 +46,82 @@ el.addEventListener('mouseup', function() {
 function changeToBlueColor(){
    var items = document.querySelectorAll(".work-item");
    items.forEach(item =>{
-       console.log(item);
-        item.style.backgroundColor = 'red';
+       setconsole.log(item);
+        item.style.filter = "grayscale(100%)";
    });
 }
 
 
-// Form Validation
-const form = document.getElementById('form');
+
+/**
+ * Form Validation
+ *  
+ * */ 
+
 // Select elements
+const form = document.getElementById('form');
 let username = document.getElementById('username');
 let email = document.getElementById('email');
 let message = document.getElementById('message');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-    username = username.value.trim();
-    email = email.value.trim();
-    message = message.value;
-
-    validInputs();
+    validateInputs();
 });
-const validInputs = ()=>{
+
+function setError(input, message) {
+	const formControl = input.parentElement;
+	const errorElement = formControl.querySelector('.error');
+    errorElement.innerText = message;
+    formControl.classList.add('error');
+    formControl.classList.remove('success')
+}
+
+function setSuccess(input) {
+    const formControl = input.parentElement;
+	const errorMessage = formControl.querySelector('.error');
+    errorMessage.innerText = '';
+    formControl.classList.add('success');
+    formControl.classList.remove('error')
+}
+const validateInputs = ()=>{
     validationName(username);
     validationEmail(email);
     validationMessage(message);
 }
 const validationName = (username)=>{
-    validName=/^[A-Za-z]+$/;
-    nameErr=document.getElementById('nameError');
-    if(username === '')
-        nameErr.innerHTML = "Name is required";
+    var usernameValue = username.value.trim();
+    var validName= /^[a-zA-Z]{4,10}$/;
+    if(usernameValue === "")
+        setError(username, "Username is required");
+    else if(!validName.test(usernameValue))
+        setError(username, "Name must be 4 - 10 letters ONLY");
+    // else if (usernameValue.length < 3 || usernameValue.length > 10)
+    //     setError(username, "It must be more than 3 and less than 10 characters");
     else{
-        if(!validName.test(username)){
-            nameErr.innerHTML="Name must be only string without numbers or symbols";
-        }
-        else{
-            usernameLength = username.length;
-            if (usernameLength < 3 || usernameLength > 10)
-                nameErr.innerHTML = "It must be more than 3 and less than 10 characters";
-        }
-        
+        setSuccess(username);
     }
 }
-const validationEmail = (email) => {
-    emailAddressErr=document.getElementById('emailError');
-    validEmailAddress=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if(email === ''){
-        emailAddressErr.innerHTML="Email Address is required";
-    }else if(!validEmailAddress.test(email)){
-        emailAddressErr.innerHTML="Email Addre must be in valid formate with @ symbol";
-    }
+const validationEmail = (emailValue) => {
+    var emailValue = email.value;
+    validEmailAddress=/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if(emailValue === "")
+        setError(email, "Email Address is required");
+    else if(!validEmailAddress.test(emailValue))
+        setError(email, "Email Addre must be in valid formate with @ symbol");
+    else
+        setSuccess(email);
 
 }
 const validationMessage = message =>{
-    msgErr=document.getElementById('msgError');
-    if(message === "")
-        msgErr.innerHTML = "Message is required";
-    else if(message.length < 20)
-        msgErr.innerHTML = "must be more than 20 characters";
+    var msgValue = message.value;
+    var validMessage=/^[a-zA-Z]{20,1000}$/;
+    if(msgValue === "")
+        setError(message, "Message is required");
+    else if(!validMessage.test(msgValue))
+        setError(message, "must be more than 20 characters");
+    else
+        setSuccess(message);
 }
 
 
