@@ -88,6 +88,10 @@ h5 {
   padding: 24px;
 }
 
+.p-3 {
+  padding: 36px;
+}
+
 .pt-2 {
   padding-top: 24px !important;
 }
@@ -530,8 +534,9 @@ button:focus {
   display: flex;
   flex-direction: column;
   background-color: var(--main-op-color);
-  padding-left: clamp(50px, 3.5rem + 2.5vw, 9rem);
-  padding-right: clamp(50px, 3.5rem + 2.5vw, 9rem);
+  padding-left: clamp(10px, 2rem + 3vw, 7rem);
+  padding-right: clamp(10px, 2.5rem, 7rem);
+
 }
 
 .progress-bar {
@@ -749,7 +754,7 @@ footer .header {
   word-wrap: break-word;
 }
 
-.header .fa {
+footer .header .fa {
   color: var(--main-color);
   font-size: clamp(20px, 1.5rem + 0.5vw, 3rem);
   padding-right: 1rem;
@@ -757,8 +762,8 @@ footer .header {
 
 footer .border-shape {
   width: 40%;
-  background: var(--main-color);
   height: 3px;
+  background: var(--main-color);
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -785,7 +790,7 @@ footer .border-shape::after {
 footer .bottom a {
   margin: 0 20px;
   color: rgba(255, 255, 255, 0.7);
-  transition: 0.5s;
+  transition: 0.1s;
 }
 
 footer .bottom a:hover {
@@ -1036,9 +1041,8 @@ footer .bottom a:hover {
     left: 5rem;
   }
 
-  .skills {
-    padding-left: clamp(80px, 7rem + 3vw, 7rem);
-    padding-right: clamp(80px, 2.5rem + 3vw, 7rem);
+  .md-skills {
+    padding-left: clamp(10px, 7rem + 3vw, 7rem);
   }
 
   .px-md-6 {
