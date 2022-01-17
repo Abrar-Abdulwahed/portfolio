@@ -456,7 +456,7 @@ button:focus {
   -webkit-transform: scale(1);
   transition: .3s ease-in-out;
   -webkit-transition: .3s ease-in-out;
-  filter: grayscale(0.30);
+  filter: grayscale(1);
 }
 
 .our-work .work-item::before {
@@ -556,18 +556,14 @@ button:focus {
   background: var(--secondary-color);
   border-radius: 3px;
   position: relative;
-  animation: 1s ease 0s 1 loadBars;
+  animation: 1s ease loadBars;
 }
 
 .progress::after {
   font-size: 12px;
-  line-height: 14px;
-  text-align: center;
-  height: 15px;
-  width: 30px;
   color: #fff;
   position: absolute;
-  padding: 2px 3px;
+  padding: 2px 4px;
   border-radius: 4px;
   right: -18px;
   top: -20px;
