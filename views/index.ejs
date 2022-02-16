@@ -10,46 +10,7 @@
     </head>
     <body>
         <!---------------- Header ---------------->
-        <header class="py-1">
-            <div class="container">
-                <nav class="d-flex justify-content-space-between align-items-center flex-wrap">
-                    <div class="logo h1 align-self-center">
-                        <span>Lo</span>go
-                    </div>
-                    <button class="menu-bar d-sm-none ms-auto">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                    <!-- Dark/Light Mode -->
-                    <div class="mode" id="changeMode">
-                        <input type="checkbox" class="checkbox" id="chk" />
-                        <label class="label d-flex justify-content-space-between align-items-center" for="chk">
-                            <i class="fas fa-moon"></i>
-                            <i class="fas fa-sun"></i>
-                            <div class="ball"></div>
-                        </label>
-                    </div>
-                    <div class="col-md-7">
-                        <ul class="menu menu-toggle justify-content-space-between d-none d-sm-flex">
-                            <li>
-                                <a href="#home">Home</a>
-                            </li>
-                            <li>
-                                <a href="#about">About</a>
-                            </li>
-                            <li>
-                                <a href="#services">service</a>
-                            </li>
-                            <li>
-                                <a href="#exp-skills">Skills</a>
-                            </li>
-                            <li>
-                                <a href="#contact">Contact</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </header>
+        <%- include ('./includes/header.ejs') %> 
 
         <!---------------- Showcase ---------------->
         <section id="home" class="showcase">
@@ -262,57 +223,8 @@
                 </div>
             </div>
         </section>
-
-        <!---------------- Footer ---------------->
-        <footer>
-            <div class="header pt-2">
-                <div class="container">
-                    <div class="row justify-content-center">
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pt-2">
-                            <i class="fa fa-map-marker"></i>
-                            <span>Almasbah Street, Taiz, Yemen</span>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pt-2">
-                            <i class="fa fa-phone"></i>
-                            <span>(+967) 736565237</span>
-                        </div>
-                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-4 pt-2">
-                            <i class="fa fa-envelope"></i>
-                            <span>abrar.abdulwahed@gmail.com</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-shape d-none d-sm-block mt-4"></div>
-            <div class="bottom mt-4">
-                <div class="container">
-                    <div class="row justify-content-center align-items-center">
-                        <a href="https://www.facebook.com/abrar.alkhorasani">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a href="https://wa.me/+967736565237">
-                            <i class="fa fa-whatsapp"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-twitter"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa fa-telegram"></i>
-                        </a>
-                    </div>
-                    <div class="row justify-content-center">
-                        <a href="#home" class="py-2">Home</a>
-                        <a href="#about" class="py-2">About</a>
-                        <a href="#services" class="py-2">service</a>
-                        <a href="#exp-skills" class="py-2">Skills</a>
-                        <a href="#contact" class="py-2">Contact</a>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright p-1">
-                All rights reserved by © Abrar 2022 
-            </div>
-        </footer>
+         <!---------------- Footer ---------------->
+        <%- include ('./includes/footer.ejs') %> 
         <script src="js/app.js"></script>
     </body>
         <script src="https://kit.fontawesome.com/0258162a56.js" crossorigin="anonymous"></script>
