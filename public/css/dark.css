@@ -1,0 +1,97 @@
+:root {
+    --ligth-theme-color: #fff;
+    --dark-theme-color: #000;
+    --main-color: #e4b551;
+    --main-op-color: #e4b551a9;
+    --secondary-color: #e451a7;
+    --main-text-color: #2c2c2c;
+    --secondary-text-color: #eee;
+}
+
+
+body.dark {
+    background: #292c35;
+    color: #fff;
+}
+
+body.dark a {
+    color: var(--secondary-text-color);
+}
+
+body.dark #services .row>*:nth-child(2n) {
+    background: #fff;
+    color: var(--main-text-color);
+}
+
+body.dark #services .row>*:nth-child(4) {
+    background: var(--main-color);
+    color: #000;
+}
+
+body.dark #services .row>*:hover {
+    background: var(--main-color);
+}
+
+body.dark #services .row>*:hover h3, body.dark #services .row>*:hover p {
+    color: #fff;
+}
+
+body.dark .experience {
+    background-color: #727272;
+    outline: 7px solid #292c35ec;
+}
+
+body.dark .years-experience .exp {
+    color: #fff;
+    font-size: 18px;
+}
+
+body.dark .years-experience .num {
+    color: #fff;
+}
+
+body.dark .showcase .intro .subheading {
+    color: var(--secondary-text-color);
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+body.dark .download-btn {
+    color: var(--secondary-text-color);
+}
+
+body.dark .showcase img {
+    border-color: #000;
+}
+
+body.dark .skills {
+    background-color: var(--main-color);
+}
+
+body.dark a, body.dark span {
+    color: #fff;
+}
+
+body.dark #contact {
+    background-color: #c0c0c0;
+}
+
+body.dark header li a {
+    color: var(--main-text-color);
+}
+
+@media only screen and (max-width: 486px) {
+    body.dark .menu-toggle {
+        background-color: #292c35;
+
+    }
+
+    body.dark .menu-toggle li a {
+        color: #fff;
+    }
+}
+
+@media (min-width: 720px) {
+    body.dark .showcase {
+        background-image: linear-gradient(90deg, #e4b551fc 60%, #d3d3d3fc 50%), url(../img/nicetexture.webp);
+    }
+}
