@@ -1,4 +1,3 @@
-const http = require('http');
 const express = require("express");
 const app = express();
 
@@ -10,6 +9,10 @@ app.use(express.static('public'));
 
 app.get(['/', '/home', '/index'], (req, res)=>{
     res.render('index', {title: 'Abrar - Portfolio'});
+});
+app.get(['/dashboard'], (req, res)=>{
+    console.log(req);
+    res.render('dashboard/index', {title: 'Abrar - Portfolio'});
 });
 app.use((req, res) => {
     res.status(404).render('404', {title: 'Not Found Page'});
