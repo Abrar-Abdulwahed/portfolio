@@ -2,14 +2,25 @@ const express = require("express");
 const multer  = require('multer');
 const {default: mongoose} = require('mongoose');
 const Personal_Info = require('./models/personal_info');
+const crypto = require("crypto");
+const path = require("path");
+const GridFsStorage = require("multer-gridfs-storage");
 const app = express();
 
 const port = process.env.PORT || 2000;
 app.set('view engine','ejs');
 app.listen(port);
+app.use(express.json());
 app.use(express.static('public'));
 
-mongoose.connect('mongodb://localhost:27017/profile_cms').then((result)=>console.log(result)).catch((err)=>console.log(err));
+// DB
+const mongoURI = "mongodb://localhost:27017/profile_cms";
+
+// connection
+const conn = mongoose.createConnection(mongoURI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
         if(file.mimetype == "image/png" || file.mimetype == "image/jpg")
