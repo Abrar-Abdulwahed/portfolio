@@ -21,6 +21,15 @@ const conn = mongoose.createConnection(mongoURI, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });
+// init gfs
+let gfs;
+conn.once("open", () => {
+  // init stream
+  gfs = new mongoose.mongo.GridFSBucket(conn.db, {
+    bucketName: "uploads"
+  });
+});
+
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
         if(file.mimetype == "image/png" || file.mimetype == "image/jpg")
