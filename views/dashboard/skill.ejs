@@ -4,61 +4,53 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title></title>
-        <link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/all.min.css">
-        <link rel="stylesheet" href="css/dashboard.css">
+        <title>Document</title>
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../css/all.min.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
     </head>
-    <body> 
+    <body>
         <div id="dashboard-body" class="dash-body fixed-header fixed-sidebar theme-white">
             <nav class="dash-header navbar navbar-expand-lg navbar-light bg-white w-100 shadow">
-                  <div class="dash-header__logo d-flex justify-content-between px-4">
-                        <div class="logo">logo</div>
-                        <div class="mobile-menu">
-                            <button id="dashboard-navbar-toggler" class="border-0">
-                                <span class="navbar-toggler-icon"></span>
-                            </button>
-                        </div>
-                  </div>
-                  <div class="dash-header__content px-4 d-flex justify-content-between align-items-center">
-                        <div class="header-contnet__left">
-                            <div class="input-holder position-relative">
-                                <input type="text" class="search-input w-100" placeholder="Type to search">
-                                <button class="search-icon rounded-circle"><i class="fas fa-search"></i></button>
-                            </div>
-                        </div>
-                        <div class="header-contnet__right">
-                            <div class="btn-group">
-                                <button class="btn bg-transparent" type="button"> 
-                                    <% if (info.profile_image) { %>
-                                        <img src="/img/<%=info.profile_image %> " alt="profile img" class="rounded-circle" width="40">
-                                    <% } else { %>
-                                        <img src="/img/dashboard/profile.jpg %> " alt="profile img" class="rounded-circle" width="40">
-                                    <% } %>
-                                </button>
-                                <button type="button" class="btn btn-lg bg-transparent dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <span class="visually-hidden">Toggle Dropdown</span>
-                                </button>
-                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
-                                    <li><a class="dropdown-item" href="/">Home</a></li>
-                                    <li><a class="dropdown-item" href="#">some</a></li>
-                                    <li><a class="dropdown-item" href="../login.html">Logout</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                  </div>
+                <div class="dash-header__logo d-flex justify-content-between px-4">
+                      <div class="logo">logo</div>
+                      <div class="mobile-menu">
+                          <button id="dashboard-navbar-toggler" class="border-0">
+                              <span class="navbar-toggler-icon"></span>
+                          </button>
+                      </div>
+                </div>
+                <div class="dash-header__content px-4 d-flex justify-content-between align-items-center">
+                      <div class="header-contnet__left">
+                          <div class="input-holder position-relative">
+                              <input type="text" class="search-input w-100" placeholder="Type to search">
+                              <button class="search-icon rounded-circle"><i class="fas fa-search"></i></button>
+                          </div>
+                      </div>
+                      <div class="header-contnet__right">
+                          <div class="btn-group">
+                              <button class="btn bg-transparent" type="button">
+                                  <img src="../img/dashboard/profile.jpg" alt="profile img" class="rounded-circle" width="40">
+                              </button>
+                              <button type="button" class="btn btn-lg bg-transparent dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuLink">
+                                  <li><a class="dropdown-item" href="#">Home</a></li>
+                                  <li><a class="dropdown-item" href="#">some</a></li>
+                                  <li><a class="dropdown-item" href="#">Logout</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                </div>
             </nav>
             <div class="dash-main">
                 <div id="dashboard-sidebar" class="dash-main__sidebar shadow px-0">
                     <div class="sidebar-menu px-4">
                         <div class="profile text-center">
                             <div class="position-relative">
-                                <% if (info.profile_image) { %>
-                                    <img src="/img/<%=info.profile_image %> " alt="profile img" class="p-1 rounded-circle border border-dark border-3" width="120" height="120">
-                                <% } else { %>
-                                    <img src="/img/dashboard/profile.jpg %> " alt="profile img" class="p-1 rounded-circle border border-dark border-3" width="120" height="120">
-                                <% } %>
-                                <button type="button" class="cursor-pointer rounded-circle shadow position-absolute hidden" data-bs-toggle="modal" data-bs-target="#updateProfileModal">
+                                <img src="../img/dashboard/profile.jpg" alt="" class="p-1 rounded-circle border border-dark border-3" width="120" height="120">
+                                <button class="cursor-pointer rounded-circle shadow position-absolute hidden" data-bs-toggle="modal" data-bs-target="#changeProfileModal">
                                     <i class="fa fa-camera text-muted" aria-hidden="true"></i>
                                 </button>
                             </div>
@@ -94,13 +86,13 @@
                               Pages
                             </div>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item active px-0">
+                                <li class="list-group-item px-0">
                                     <a href="/dashboard" class="px-2">
                                         <i class="fas fa-home text-muted" aria-hidden="true"></i>
                                         <span class="hidden text-dark fw-bolder">Home</span>
                                     </a>
                                 </li>
-                                <li class="list-group-item px-0">
+                                <li class="list-group-item active px-0">
                                     <a href="/dashboard/skill" class="px-2">
                                         <i class="fab fa-accusoft text-muted" aria-hidden="true"></i>
                                         <span class="hidden text-dark fw-bolder">Skills</span>
@@ -132,9 +124,9 @@
                     <div class="page-heading d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
                             <div class="page-icon d-inline-flex justify-content-center align-items-center rounded-2 p-3 me-4 fs-2 shadow bg-white">
-                                <i class="fas fa-home" aria-hidden="true"></i>
+                                <i class="fab fa-accusoft" aria-hidden="true"></i>
                             </div>
-                            <div>Personal Information
+                            <div>Skills
                                 <div class="page-subheading">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, minus.
                                 </div>
@@ -143,7 +135,7 @@
                         <div class="page-actions">
                             <div class="d-inline-block dropdown">
                                 <button type="button" class="btn-shadow btn bg-primary text-white" data-bs-toggle="modal" data-bs-target="#updatePersonalInformationModal">
-                                    <i class="fas fa-user-edit text-white" aria-hidden="true"></i>
+                                    <i class="fas fa-plus text-white" aria-hidden="true"></i>
                                 </button>
                             </div>
                         </div>
@@ -173,35 +165,7 @@
                             </div> 
                         </div>
                     </div>
-                    <!-- updateProfileModal -->
-                    <div class="modal fade" id="updateProfileModal" tabindex="-1" aria-labelledby="updateProfileModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content rounded-0">
-                                <div class="modal-header mt-3">
-                                    <h6 class="modal-title" id="updateProfileModalLabel">Edit Profile</h6>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    <div class="circle-custom-icon bg-primary d-flex justify-content-center align-items-center shadow-sm">
-                                        <i class="fas fa-pen-alt text-white"></i>
-                                    </div>
-                                </div>
-                                <div class="modal-body justify-content-center">
-                                    <form class="row g-3" id="editProfile" action="/dashboard"  method="POST" enctype="multipart/form-data">
-                                        <div class="col-12">
-                                            <div class="input-group mb-3">
-                                                <input type="file" class="form-control" name="profile_image" id="profile_image">
-                                            </div>
-                                        </div>
-                                        <input type="submit" class="btn bg-opacity-primary rounded-0 text-white">Save</button>
-                                    </form>  
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn bg-secondary rounded-0" data-bs-dismiss="modal">Close</button>
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- updatePersonalInformationModal -->
+                    <!-- Modal -->
                     <div class="modal fade" id="updatePersonalInformationModal" tabindex="-1" aria-labelledby="updatePersonalInformationModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content rounded-0">
@@ -209,7 +173,7 @@
                                     <h6 class="modal-title" id="updatePersonalInformationModalLabel">Update Personal Information</h6>
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                     <div class="circle-custom-icon bg-primary d-flex justify-content-center align-items-center shadow-sm">
-                                        <i class="fas fa-pen-alt text-white"></i>
+                                        <i class="fal fa-pen-alt text-white"></i>
                                     </div>
                                 </div>
                                 <div class="modal-body justify-content-center">
@@ -272,7 +236,7 @@
                 </div>
             </div>
         </div>
-        <script src="../js/bootstrap.js"></script>
-        <script src="js/app.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/dashboard.js"></script>
     </body>
 </html>
