@@ -48,9 +48,15 @@ app.get('/dashboard', (req, response)=>{
 // app.post('/product/add', upload.fields([{name:"p_image"}, {name: "p_image_2"}]), (req, res)=>{
 //     res.end();
 // });
-app.post('/dashboard', upload.single('profile_image'), (req, res)=>{
+app.post('/dashboard',
+    upload.fields([
+        {name:'profile_image'},
+        {name:'cv'}
+    ]),
+    (req, res)=>{
     const p_info = new Personal_Info({
-        profile_image:req.file.filename,
+        profile_image: req.file.filename,
+        cv: req.file.filename,
     }).save();
     res.redirect('/dashboard');
 });
