@@ -119,8 +119,3 @@ const validationMessage = message => {
     else
         setSuccess(message);
 }
-
-
-
-
-
