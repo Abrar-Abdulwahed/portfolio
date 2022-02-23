@@ -2,33 +2,15 @@ const express = require("express");
 const multer  = require('multer');
 const {default: mongoose} = require('mongoose');
 const Personal_Info = require('./models/personal_info');
-const crypto = require("crypto");
-const path = require("path");
-const GridFsStorage = require("multer-gridfs-storage");
 const app = express();
 
 const port = process.env.PORT || 2000;
 app.set('view engine','ejs');
 app.listen(port);
-app.use(express.json());
 app.use(express.static('public'));
 
-// DB
-const mongoURI = "mongodb://localhost:27017/profile_cms";
-
-// connection
-const conn = mongoose.createConnection(mongoURI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
-// init gfs
-let gfs;
-conn.once("open", () => {
-  // init stream
-  gfs = new mongoose.mongo.GridFSBucket(conn.db, {
-    bucketName: "uploads"
-  });
-});
+mongoose.connect('mongodb://localhost:27017/profile_cms');
+//.then((result)=>console.log(result)).catch((err)=>console.log(err));
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
@@ -40,10 +22,8 @@ const storage = multer.diskStorage({
     filename:(req, file, cb)=>{
         var extension = file.originalname.split('.');
         var ext = extension[extension.length - 1];
-        var imgName = file.filename + '-'+ Date.now() + '-' + Math.round(Math.random() * 1E9) + '.' + ext;
-        // var imgName = Date.now() + '-' + Math.round(Math.random() * 1E9)+file.originalname;
-
-        cb(null, imgName);
+        var fileName = file.filename + '-'+ Date.now() + '-' + Math.round(Math.random() * 1E9) + '.' + ext;
+        cb(null, fileName);
     }
 }) 
 const upload = multer({
@@ -55,29 +35,29 @@ const upload = multer({
     },
     limits:1024*1024 *5,
 });
-
 app.use(express.urlencoded());
 
 
 app.get('/dashboard', (req, response)=>{
-    Personal_Info.findOne().sort({_id:-1}).then(res => response.render('dashboard/index', {info: res}))
+    Personal_Info.findOne().sort({_id:-1}).then(res => response.render('dashboard/index', {info: res}));
+    // response.render('dashboard/index', {info: null});
 }); 
 
-
-
-// app.post('/product/add', upload.fields([{name:"p_image"}, {name: "p_image_2"}]), (req, res)=>{
-//     res.end();
-// });
-app.post('/dashboard',
-    upload.fields([
-        {name:'profile_image'},
-        {name:'cv'}
-    ]),
-    (req, res)=>{
-    const p_info = new Personal_Info({
-        profile_image: req.file.filename,
-        cv: req.file.filename,
-    }).save();
+app.post('/dashboard', upload.fields([{name: "profile_image"}, {name: "cv"}]), async (req, res)=>{  
+    console.log('files', req.files, 'body', req.body, 'body.file', req.body.file) 
+    const instance = new Personal_Info({
+            id: mongoose.Types.ObjectId,
+            fullname: req.body.fullname,
+            username: req.body.username,
+            email: req.body.email,
+            profile_image:  req.files["profile_image"] !== undefined? req.files["profile_image"][0].filename : null,
+            cv:  req.files["cv"] !== undefined ? req.files["cv"][0].filename : null,
+        })
+        await instance.save((error, result) => {
+                if (error)
+                    console.log(error.message);
+                
+        });
     res.redirect('/dashboard');
 });
 

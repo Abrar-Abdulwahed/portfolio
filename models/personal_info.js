@@ -2,22 +2,27 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const personal_info_schema = new Schema({
-    fullName: {
+    fullname: {
         type: String,
-        required: [true, 'Fullname is required!'],
+        // required: [true, 'Fullname is required!'],
+        unique: true,
     },
     username: {
         type: String,
+        unique: true,
     },
     email: {
         type: String,
-        required: [true, 'email is required!']
+        // required: [true, 'Email is required!']
+        unique: true,
     },
     profile_image: {
         type: String,
+        unique: true,
     },
     cv: {
-        type: String
+        type: String,
+        unique: true,
     }
 });
 
