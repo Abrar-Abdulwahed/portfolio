@@ -14,7 +14,7 @@ mongoose.connect('mongodb://localhost:27017/profile_cms');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb)=>{
-        if(file.mimetype == "image/png" || file.mimetype == "image/jpg")
+        if(file.mimetype == "image/jpeg")
             cb(null,'public/img/');
         else if(file.mimetype == "application/pdf")
             cb(null,'public/pdf/');
@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 const upload = multer({
     storage: storage,
     fileFilter: (req, file, callback)=>{
-        if(file.mimetype == "image/png" || file.mimetype == "image/jpg" ||  file.mimetype == "application/pdf")
+        if(file.mimetype == "image/jpeg" ||  file.mimetype == "application/pdf")
             callback(null, true)
         else callback(null, false);
     },
@@ -43,8 +43,7 @@ app.get('/dashboard', (req, response)=>{
     // response.render('dashboard/index', {info: null});
 }); 
 
-app.post('/dashboard', upload.fields([{name: "profile_image"}, {name: "cv"}]), async (req, res)=>{  
-    console.log('files', req.files, 'body', req.body, 'body.file', req.body.file) 
+app.post('/dashboard', upload.fields([{name: "profile_image"}, {name: "cv"}]), async (req, res)=>{
     const instance = new Personal_Info({
             id: mongoose.Types.ObjectId,
             fullname: req.body.fullname,
